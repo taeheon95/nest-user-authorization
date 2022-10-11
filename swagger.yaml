@@ -1,0 +1,46 @@
+openapi: 3.0.0
+
+info:
+  version: '1.0.0'
+  title: 'nest example'
+  description: 'nest example description'
+
+servers:
+  - url: `http://localhost:3000`
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        userNo:
+          type: long
+        id:
+          type: string
+        email:
+          type: string
+          format: email
+        createAt:
+          type: string
+          format: date-time
+        updateAt:
+          type: string
+          format: date-time
+    ApiFailResponse:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          minimum: 400
+          maxinum: 499
+        message:
+          type: string
+        error:
+          type: string
+        path:
+          type: string
+          format: uri
+        method:
+          type: string
+          enum: [HEAD, GET, POST, PUT, PATCH, DELETE, OPTIONS]
+        

@@ -1,6 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Exclude } from 'class-transformer';
-import { Expose } from 'class-transformer/types/decorators';
+import { Exclude, Expose } from 'class-transformer';
 
 export class ApiSuccessResponse<T> {
   @Exclude() private _statusCode: number;
